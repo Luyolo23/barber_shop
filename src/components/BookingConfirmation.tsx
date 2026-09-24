@@ -4,6 +4,7 @@ import { services, formatPrice } from '../data/services'
 import { fullAddress, shop } from '../data/shop'
 import { endTime, formatDate, formatTime } from '../services/availability'
 import type { Booking } from '../types'
+import AddToCalendar from './AddToCalendar'
 
 type Props = { booking: Booking; onReset: () => void }
 
@@ -60,7 +61,7 @@ export default function BookingConfirmation({ booking, onReset }: Props) {
           A confirmation has been noted for {booking.customer.email}. Please arrive 5 minutes early.
         </p>
 
-        {/* Step 6: "Add to calendar" buttons go here */}
+        <AddToCalendar booking={booking} />
 
         <div className="mt-8 text-center">
           <button type="button" onClick={onReset} className="btn border-2 border-bottle text-bottle hover:bg-bottle hover:text-cream">
