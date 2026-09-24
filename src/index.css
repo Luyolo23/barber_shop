@@ -12,7 +12,9 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-cream text-charcoal font-sans antialiased;
   }
@@ -21,30 +23,35 @@
   }
 }
 
-@layer components {
-  /* Engraved-signage label style */
-  .label {
-    @apply text-sm font-semibold uppercase tracking-[0.2em];
-  }
+/* Engraved-signage label style */
+@utility label {
+  @apply text-sm font-semibold uppercase tracking-[0.2em];
+}
 
-  .btn {
-    @apply inline-flex items-center justify-center rounded-sm px-6 py-3
-           text-sm font-bold uppercase tracking-[0.15em] transition
-           focus-visible:outline-2 focus-visible:outline-offset-2
-           focus-visible:outline-brass;
-  }
-  .btn-primary { @apply btn bg-brass text-charcoal hover:bg-[#c99a4a]; }
-  .btn-outline { @apply btn border-2 border-brass text-brass hover:bg-brass hover:text-charcoal; }
+/* Base button: apply this with btn-primary or btn-outline */
+@utility btn {
+  @apply inline-flex items-center justify-center rounded-sm px-6 py-3
+         text-sm font-bold uppercase tracking-[0.15em] transition
+         focus-visible:outline-2 focus-visible:outline-offset-2
+         focus-visible:outline-brass;
+}
 
-  /* Barber-pole divider */
-  .pole-divider {
-    height: 8px;
-    background: repeating-linear-gradient(
-      -45deg,
-      var(--color-bottle) 0 12px,
-      var(--color-cream) 12px 24px,
-      var(--color-oxblood) 24px 36px,
-      var(--color-cream) 36px 48px
-    );
-  }
+@utility btn-primary {
+  @apply btn bg-brass text-charcoal hover:bg-[#c99a4a];
+}
+
+@utility btn-outline {
+  @apply btn border-2 border-brass text-brass hover:bg-brass hover:text-charcoal;
+}
+
+/* Barber-pole divider (plain CSS, no @apply needed) */
+.pole-divider {
+  height: 8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-bottle) 0 12px,
+    var(--color-cream) 12px 24px,
+    var(--color-oxblood) 24px 36px,
+    var(--color-cream) 36px 48px
+  );
 }
