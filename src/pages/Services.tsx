@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import { services, formatPrice } from '../data/services'
 import type { Service } from '../types'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 const categories: { id: Service['category']; title: string; note: string }[] = [
   { id: 'cuts', title: 'Cuts', note: 'Every cut ends with a neck shave and a style.' },
@@ -10,6 +11,7 @@ const categories: { id: Service['category']; title: string; note: string }[] = [
 ]
 
 export default function Services() {
+  useDocumentTitle('Services & Pricing | Rand & Razor Barber Co.')
   return (
     <>
       <PageHeader

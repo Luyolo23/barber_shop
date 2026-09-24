@@ -3,6 +3,7 @@ import BarberCard from '../components/BarberCard'
 import OfferModal from '../components/OfferModal'
 import { barbers } from '../data/barbers'
 import { services, formatPrice } from '../data/services'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 const featured = ['classic-cut', 'skin-fade', 'hot-towel-shave', 'full-service']
   .map((id) => services.find((s) => s.id === id)!)
@@ -23,6 +24,7 @@ const gallery = [
 ]
 
 export default function Home() {
+  useDocumentTitle('Rand & Razor Barber Co. | Johannesburg')
   return (
     <>
       <OfferModal />

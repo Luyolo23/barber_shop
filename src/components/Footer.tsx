@@ -74,7 +74,10 @@ export default function Footer() {
       <div className="border-t border-cream/15">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-cream/70 sm:px-6 md:flex-row">
           <p>&copy; {new Date().getFullYear()} {shop.name} All rights reserved.</p>
-          <Link to="/terms" className="hover:text-brass">Terms &amp; Conditions</Link>
+          <div className="flex gap-5">
+            <Link to="/terms" className="hover:text-brass">Terms &amp; Conditions</Link>
+            <Link to="/terms#privacy" className="hover:text-brass">Privacy</Link>
+          </div>
         </div>
       </div>
     </footer>

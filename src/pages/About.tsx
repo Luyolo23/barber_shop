@@ -3,6 +3,7 @@ import BarberCard from '../components/BarberCard'
 import PageHeader from '../components/PageHeader'
 import { barbers } from '../data/barbers'
 import { shop } from '../data/shop'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 const stats = [
   { value: String(shop.established), label: 'Founded' },
@@ -17,6 +18,7 @@ const values = [
 ]
 
 export default function About() {
+  useDocumentTitle('Our Story | Rand & Razor Barber Co.')
   return (
     <>
       <PageHeader

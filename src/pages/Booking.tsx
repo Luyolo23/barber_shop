@@ -1,8 +1,10 @@
 import BookingFlow from '../components/BookingFlow'
 import PageHeader from '../components/PageHeader'
 import { fullAddress, openingHours, shop } from '../data/shop'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function Booking() {
+  useDocumentTitle('Services & Pricing | Rand & Razor Barber Co.')
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`
 

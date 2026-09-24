@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function NotFound() {
+  useDocumentTitle('Page Not Found | Rand & Razor Barber Co.')
   return (
     <section className="mx-auto max-w-xl px-6 py-24 text-center">
       <p className="label text-oxblood">Error 404</p>

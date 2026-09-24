@@ -4,11 +4,18 @@ import Header from './Header'
 import Footer from './Footer'
 
 export default function Layout() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [pathname])
+  if (hash) {
+    // Wait a tick so the new page has rendered
+    const id = window.setTimeout(() => {
+      document.getElementById(hash.slice(1))?.scrollIntoView()
+    }, 0)
+    return () => window.clearTimeout(id)
+  }
+  window.scrollTo({ top: 0, behavior: 'instant' })
+}, [pathname, hash])
 
   return (
     <div className="flex min-h-screen flex-col">
