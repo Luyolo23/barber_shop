@@ -2,9 +2,8 @@
 
 A complete website for a fictional Johannesburg barber shop with a gold-rush heritage, built with React and TypeScript. It includes a multi-step online booking system with real availability rules and calendar export (Google Calendar and Apple/Outlook `.ics`).
 
-**Live site:** https://YOUR-VERCEL-URL.vercel.app
+**Live site:** https://barber-shop-seven-hazel.vercel.app/
 
-> Rand & Razor is a fictional business created for a practical assessment. The address, phone number, email and social links are placeholders.
 
 ---
 

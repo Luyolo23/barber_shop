@@ -169,7 +169,7 @@ export default function BookingFlow() {
 
   return (
     <div className="space-y-8">
-      {/* 1. Service */}
+      {/* Service */}
       <Step n={1} title="Choose your service">
         <div className="grid gap-3 sm:grid-cols-2">
           {services.map((s) => (
@@ -190,7 +190,7 @@ export default function BookingFlow() {
         </div>
       </Step>
 
-      {/* 2. Barber */}
+      {/* Barber */}
       {service && (
         <Step n={2} title="Choose your barber">
           <div className="grid gap-3 sm:grid-cols-3">
@@ -217,7 +217,7 @@ export default function BookingFlow() {
         </Step>
       )}
 
-      {/* 3. Date */}
+      {/* Date */}
       {service && barber && (
         <Step n={3} title="Pick a date">
           <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
@@ -240,7 +240,7 @@ export default function BookingFlow() {
         </Step>
       )}
 
-      {/* 4. Time */}
+      {/* Time */}
       {service && barber && date && (
         <Step n={4} title="Pick a time">
           {loadingSlots ? (
@@ -275,7 +275,7 @@ export default function BookingFlow() {
         </Step>
       )}
 
-      {/* 5. Details */}
+      {/* Details */}
       {service && barber && date && time && (
         <Step n={5} title="Your details">
           <dl className="mb-6 space-y-1 border-2 border-dashed border-bottle p-4 text-sm">
